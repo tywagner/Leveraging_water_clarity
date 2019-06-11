@@ -1,0 +1,41 @@
+
+###################################################
+###  Instructions for analysis and results code ###
+###################################################
+
+1. Introduction
+
+This README file provides instructions on how to run the example R code associated with the paper, "Increasing accuracy of lake nutrient predictions in thousands of lakes by leveraging water clarity data." 
+
+2. Requirements
+
+The code has been tested with R version 3.6.0, "Planting of a Tree."  The following R packages must be installed before the code will run successfully:
+
+mvtnorm
+MCMCpack
+
+
+3. Instructions
+
+Before running any code, make sure the required R packages have been installed.  Set the R working directory to the location of this README file (this is NOT the location of the data or the R code, as these can be found in the 'data' and 'src' folders, respectively).
+
+Open and run the "main.R" file, found in the 'src' folder.  The script contains 3 sequential steps, which perform the following:
+
+Step One: 
+
+- Add all functions from the script, 'functions.R', found in the 'src' folder.
+
+Step Two: 
+
+- Run MCMC chains and calculate posterior predictive distributions using two random holdout sets, one big and one small.  The code is called via the 'run1.R' and 'run2.R' scripts, found in the 'src' folder.  Output from the chains and the post. pred. distributions are saved to the 'data' folder.
+
+Step Three: 
+
+- Compute RMSE and MPE using the post. pred. samples.  The resulting error estimates are saved in the 'output' folder.
+
+
+4. Output
+
+The results are saved in four files, 'rmse_full.rds', 'rmse_cond.rds', 'mpe_full.rds', and 'mpe_cond.rds', each of which can be found in the 'output' folder after the successful completion of 'main.R'.  Note that these results will not match the numbers in the manuscript exactly, as random number generation will add slight differences to the results. 
+
+
